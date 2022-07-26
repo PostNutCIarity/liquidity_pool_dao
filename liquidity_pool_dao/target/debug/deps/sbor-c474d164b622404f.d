@@ -1,0 +1,12 @@
+g:\My Drive\GitHub\daoamm\target\debug\deps\sbor-c474d164b622404f.rmeta: C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\lib.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\any.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\decode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\describe.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\encode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\path.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\rust.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\type_id.rs
+
+g:\My Drive\GitHub\daoamm\target\debug\deps\sbor-c474d164b622404f.d: C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\lib.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\any.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\decode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\describe.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\encode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\path.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\rust.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\type_id.rs
+
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\lib.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\any.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\decode.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\describe.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\encode.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\path.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\rust.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor\src\type_id.rs:

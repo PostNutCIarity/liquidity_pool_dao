@@ -1,0 +1,10 @@
+G:\My Drive\GitHub\daoamm\target\release\deps\sbor_derive-e192e3d09a8aecbf.dll: C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\lib.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\decode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\describe.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\encode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\type_id.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\utils.rs
+
+G:\My Drive\GitHub\daoamm\target\release\deps\sbor_derive-e192e3d09a8aecbf.d: C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\lib.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\decode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\describe.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\encode.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\type_id.rs C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\utils.rs
+
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\lib.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\decode.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\describe.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\encode.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\type_id.rs:
+C:\Users\renee\.cargo\git\checkouts\radixdlt-scrypto-1833d92590086ce0\6c17276\sbor-derive\src\utils.rs:

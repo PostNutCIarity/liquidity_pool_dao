@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=g:\My Drive\GitHub\daoamm\RaDEX\target\debug\build\typenum-100a7ff1563efc1c\out\consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=g:\My Drive\GitHub\daoamm\RaDEX\target\debug\build\typenum-100a7ff1563efc1c\out\op.rs
