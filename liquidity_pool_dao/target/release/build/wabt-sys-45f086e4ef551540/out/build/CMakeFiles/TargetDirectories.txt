@@ -1,0 +1,5 @@
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build/CMakeFiles/everything.dir
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build/CMakeFiles/wabt.dir
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build/CMakeFiles/wasm.dir
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build/CMakeFiles/edit_cache.dir
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,11 @@
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/deps/signature-715c28ef21922491.rmeta: /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/lib.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/error.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signature.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signer.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/verifier.rs
+
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/deps/libsignature-715c28ef21922491.rlib: /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/lib.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/error.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signature.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signer.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/verifier.rs
+
+/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/deps/signature-715c28ef21922491.d: /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/lib.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/error.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signature.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signer.rs /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/verifier.rs
+
+/Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/lib.rs:
+/Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/error.rs:
+/Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signature.rs:
+/Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/signer.rs:
+/Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/signature-1.4.0/src/verifier.rs:

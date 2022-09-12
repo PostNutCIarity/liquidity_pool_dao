@@ -1,0 +1,22 @@
+CMake Warning at CMakeLists.txt:174 (message):
+  Unknown target architecture!
+
+
+CMake Warning (dev) at CMakeLists.txt:325 (add_library):
+  Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  File:
+
+    /Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/wabt-sys-0.8.0/wabt/src/config.h.in
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER
+    CMAKE_ASM_FLAGS
+
+
+make: warning: -jN forced in submake: disabling jobserver mode.

@@ -112,7 +112,7 @@ blueprint!{
         /// This is where proposal(s) who have advanced to the Voting Period will be contained. Only one can advance to the Voting Period at a time. 
         proposal_in_voting_period: Vec<NonFungibleId>,
         /// This is the component address of the liquidity pool to change the pool parameter if the proposal succeeds.
-        liquidity_pool: Option<ComponentAddress>,
+        liquidity_pool_address: Option<ComponentAddress>,
     }
 
     impl LiquidityPoolDAO {
@@ -170,7 +170,7 @@ blueprint!{
                 xrd_vault: Vault::new(RADIX_TOKEN),
                 proposal_end_epoch: 5,
                 proposal_in_voting_period: Vec::new(),
-                liquidity_pool: None,
+                liquidity_pool_address: None,
             }
             .instantiate()
             .globalize();
@@ -188,7 +188,7 @@ blueprint!{
             liquidity_pool_address: ComponentAddress,
         )
         {
-            self.liquidity_pool.get_or_insert(liquidity_pool_address);
+            self.liquidity_pool_address = Some(liquidity_pool_address);
         }
 
         /// Creates a governance proposal
@@ -218,21 +218,23 @@ blueprint!{
             fee_to_pool: Decimal,
         ) -> NonFungibleId
         {
-            // Retrieves the LiquidityPool component. 
-            let liquidity_pool: LiquidityPool = self.liquidity_pool.unwrap().into();
-
+            let liquidity_pool: LiquidityPoolComponent = self.liquidity_pool_address.unwrap().into();
+            
             // Retrieves the resource address of the tracking_token
             let tracking_token_address = liquidity_pool.tracking_token_address();
 
-            assert_eq!(lp_proof.resource_address(), tracking_token_address, 
-                "LP Token does not belong to this liquidity pool"
+            lp_proof.validate_proof(
+                ProofValidationMode::ValidateResourceAddress(tracking_token_address))
+                .expect(
+                "[Governance Proposal]: LP Token does not belong to this liquidity pool"
             );
+                
             assert!((token_1_weight + token_2_weight) <= dec!("1.0"), 
                 "[Governance Proposal]: The weight of both tokens cannot exceed {:?}.", dec!("1.0")
             );
             assert!(
                 (fee_to_pool >= Decimal::zero()) & (fee_to_pool <= dec!("100")), 
-                "[Pool Creation]: Fee must be between 0 and 100"
+                "[Governance Proposal]: Fee must be between 0 and 100"
             );
 
             // Mints the Proposal NFT based on the arguments passed.
@@ -261,12 +263,14 @@ blueprint!{
             self.push_nft_proposal_address();
 
             // Retrieves the LiquidityPool component.
-            let liquidity_pool: LiquidityPool = self.liquidity_pool.unwrap().into();
+            let liquidity_pool: LiquidityPoolComponent = self.liquidity_pool_address.unwrap().into();
 
             // Retrieves LiquidityPool component data.
-            let liquidity_pool_token_1_weight = liquidity_pool.token_1_weight();
-            let liquidity_pool_token_2_weight = liquidity_pool.token_2_weight();
-            let liquidity_pool_fee_to_pool = liquidity_pool.fee_to_pool();
+            let liquidity_pool_token_1_weight: Decimal = liquidity_pool.token_1_weight();
+
+            let liquidity_pool_token_2_weight: Decimal = liquidity_pool.token_2_weight();
+
+            let liquidity_pool_fee_to_pool: Decimal = liquidity_pool.fee_to_pool();
 
             // Retrieves the Proposal NFT ID.
             let proposal_id = nft_proposal.non_fungible::<Proposal>().id();
@@ -344,6 +348,8 @@ blueprint!{
             );
 
             self.xrd_vault.put(fee);
+
+            
 
             // Retrieves the Proposal NFT data again since the previous value has been consumed.
             let proposal_data: Proposal = resource_manager.get_non_fungible_data(&proposal_id);
@@ -530,7 +536,7 @@ blueprint!{
         ) -> Bucket
         {
             // Retrieves the LiquidityPool component. 
-            let liquidity_pool: LiquidityPool = self.liquidity_pool.unwrap().into();
+            let liquidity_pool: LiquidityPoolComponent = self.liquidity_pool_address.unwrap().into();
 
             // Retrieves the resource address of the tracking_token
             let tracking_token_address = liquidity_pool.tracking_token_address();
@@ -718,11 +724,13 @@ blueprint!{
             vote_badge: Proof,
         )
         {
-            assert_eq!(vote_badge.resource_address(), self.vote_badge_address, 
-                "Incorrect proof provided."
-            );
+            let validated_vote_badge: ValidatedProof = vote_badge
+            .validate_proof(
+                ProofValidationMode::ValidateResourceAddress(self.vote_badge_address)
+            )
+            .expect("[Vote Info]: Invalid Proof provided.");
             
-            let vote_badge_data = vote_badge.non_fungible::<VoteBadge>().data();
+            let vote_badge_data = validated_vote_badge.non_fungible::<VoteBadge>().data();
             let proposal = vote_badge_data.proposal;
             let vote = vote_badge_data.vote;
             let vote_weight = vote_badge_data.vote_weight;
@@ -756,12 +764,14 @@ blueprint!{
             vote_submission: Vote,
         )
         {
-            assert_eq!(vote_badge.resource_address(), self.vote_badge_address, 
-                "Incorrect proof provided."
-            );
+            let validated_vote_badge: ValidatedProof = vote_badge
+            .validate_proof(
+                ProofValidationMode::ValidateResourceAddress(self.vote_badge_address)
+            )
+            .expect("[Vote Info]: Invalid Proof provided.");
 
             // Retreives Vote Badge NFT data.
-            let vote_badge_data = vote_badge.non_fungible::<VoteBadge>().data();
+            let vote_badge_data = validated_vote_badge.non_fungible::<VoteBadge>().data();
 
             let proposal_id = vote_badge_data.proposal;
             let vote = vote_badge_data.vote;
@@ -775,7 +785,7 @@ blueprint!{
             let resource_manager = borrow_resource_manager!(self.nft_proposal_address);
 
             // The helper function that reallocates the LP Tokens from the respective vote vaults.
-            let lp_tokens = self.reallocate_lp_token(&vote_badge);
+            let lp_tokens = self.reallocate_lp_token(&validated_vote_badge);
 
             // Evaluates the new vote and adds allocation based on matched criteria.
             // Data manipulation occurs for both Proposal NFT data and Vote Badge data.
@@ -793,12 +803,12 @@ blueprint!{
                     info!("[Vote Recast]: The weight of your vote is {:?}.", vote_weight);
 
                     // Logic for changing the Vote Badge NFT
-                    let mut vote_badge_data = vote_badge.non_fungible::<VoteBadge>().data();
+                    let mut vote_badge_data = validated_vote_badge.non_fungible::<VoteBadge>().data();
                     vote_badge_data.vote = Vote::Yes;
 
                     // Authorizes the updates for the Proposal NFT and the Vote Badge NFT.
                     self.nft_proposal_admin.authorize(||
-                        vote_badge.non_fungible().update_data(vote_badge_data)
+                        validated_vote_badge.non_fungible().update_data(vote_badge_data)
                     );
                     self.nft_proposal_admin.authorize(|| 
                         resource_manager.update_non_fungible_data(&proposal_id, proposal_data)
@@ -827,11 +837,11 @@ blueprint!{
                     info!("[Vote Recast]: The weight of your vote is {:?}.", vote_weight);
 
                     // Logic for changing VoteBadge
-                    let mut vote_badge_data = vote_badge.non_fungible::<VoteBadge>().data();
+                    let mut vote_badge_data = validated_vote_badge.non_fungible::<VoteBadge>().data();
                     vote_badge_data.vote = Vote::No;
 
                     self.nft_proposal_admin.authorize(||
-                        vote_badge.non_fungible().update_data(vote_badge_data)
+                        validated_vote_badge.non_fungible().update_data(vote_badge_data)
                     );
                     self.nft_proposal_admin.authorize(|| 
                         resource_manager.update_non_fungible_data(&proposal_id, proposal_data)
@@ -859,11 +869,11 @@ blueprint!{
                     info!("[Vote Recast]: The weight of your vote is {:?}.", vote_weight);
       
                     // Logic for changing VoteBadge
-                    let mut vote_badge_data = vote_badge.non_fungible::<VoteBadge>().data();
+                    let mut vote_badge_data = validated_vote_badge.non_fungible::<VoteBadge>().data();
                     vote_badge_data.vote = Vote::NoWithVeto;
 
                     self.nft_proposal_admin.authorize(||
-                        vote_badge.non_fungible().update_data(vote_badge_data)
+                        validated_vote_badge.non_fungible().update_data(vote_badge_data)
                     );
                     self.nft_proposal_admin.authorize(|| 
                         resource_manager.update_non_fungible_data(&proposal_id, proposal_data)
@@ -903,10 +913,11 @@ blueprint!{
         /// * `Bucket` - The bucket that contains the LP Tokens.
         fn reallocate_lp_token(
             &mut self,
-            vote_badge: &Proof
+            vote_badge: &ValidatedProof
         ) -> Bucket
         {
             // Retreives Vote Badge NFT data.
+
             let vote_badge_data = vote_badge.non_fungible::<VoteBadge>().data();
 
             let vote = vote_badge_data.vote;
@@ -1053,7 +1064,7 @@ blueprint!{
             let no_with_veto_counter = no_with_veto_vote / participating_vote;
 
             // Retrieves LiquidityPool component.
-            let liquidity_pool: LiquidityPool = self.liquidity_pool.unwrap().into();
+            let liquidity_pool: LiquidityPoolComponent = self.liquidity_pool_address.unwrap().into();
 
             // Retrieves LP Token resource address.
             let tracking_token_address = liquidity_pool.tracking_token_address();
@@ -1290,7 +1301,8 @@ blueprint!{
             &self
         )
         {
-            let liquidity_pool: LiquidityPool = self.liquidity_pool.unwrap().into();
+            let liquidity_pool: LiquidityPoolComponent = self.liquidity_pool_address.unwrap().into();
+            
             liquidity_pool.push_nft_proposal_address(self.nft_proposal_address);
         }
     }

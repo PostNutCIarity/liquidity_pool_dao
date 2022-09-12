@@ -1,0 +1,182 @@
+cargo:rerun-if-env-changed=WABT_CXXSTDLIB
+cargo:rerun-if-env-changed=CXXSTDLIB
+CMAKE_TOOLCHAIN_FILE_aarch64-apple-darwin = None
+CMAKE_TOOLCHAIN_FILE_aarch64_apple_darwin = None
+HOST_CMAKE_TOOLCHAIN_FILE = None
+CMAKE_TOOLCHAIN_FILE = None
+CMAKE_GENERATOR_aarch64-apple-darwin = None
+CMAKE_GENERATOR_aarch64_apple_darwin = None
+HOST_CMAKE_GENERATOR = None
+CMAKE_GENERATOR = None
+CMAKE_PREFIX_PATH_aarch64-apple-darwin = None
+CMAKE_PREFIX_PATH_aarch64_apple_darwin = None
+HOST_CMAKE_PREFIX_PATH = None
+CMAKE_PREFIX_PATH = None
+CMAKE_aarch64-apple-darwin = None
+CMAKE_aarch64_apple_darwin = None
+HOST_CMAKE = None
+CMAKE = None
+running: "cmake" "/Users/jakemai/.cargo/registry/src/github.com-1ecc6299db9ec823/wabt-sys-0.8.0/wabt" "-DBUILD_TESTS=OFF" "-DBUILD_TOOLS=OFF" "-DCMAKE_INSTALL_PREFIX=/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out" "-DCMAKE_C_FLAGS= -ffunction-sections -fdata-sections -fPIC -arch arm64" "-DCMAKE_C_COMPILER=/usr/bin/cc" "-DCMAKE_CXX_FLAGS= -ffunction-sections -fdata-sections -fPIC -arch arm64" "-DCMAKE_CXX_COMPILER=/usr/bin/c++" "-DCMAKE_ASM_FLAGS= -ffunction-sections -fdata-sections -fPIC -arch arm64" "-DCMAKE_ASM_COMPILER=/usr/bin/cc" "-DCMAKE_BUILD_TYPE=MinSizeRel"
+-- The C compiler identification is AppleClang 13.1.6.13160021
+-- The CXX compiler identification is AppleClang 13.1.6.13160021
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for alloca.h
+-- Looking for alloca.h - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for snprintf
+-- Looking for snprintf - found
+-- Looking for strcasecmp
+-- Looking for strcasecmp - found
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of ssize_t
+-- Check size of ssize_t - done
+-- Check size of size_t
+-- Check size of size_t - done
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.9", minimum required is "3.5") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build
+running: "cmake" "--build" "." "--config" "MinSizeRel" "--parallel" "10"
+[  2%] Building CXX object CMakeFiles/wabt.dir/src/apply-names.cc.o
+[  3%] Building CXX object CMakeFiles/wabt.dir/src/binary-reader.cc.o
+[  3%] Building CXX object CMakeFiles/wabt.dir/src/binary.cc.o
+[  4%] Building CXX object CMakeFiles/wabt.dir/src/binary-reader-ir.cc.o
+[  6%] Building CXX object CMakeFiles/wabt.dir/src/binary-reader-logging.cc.o
+[  6%] Building CXX object CMakeFiles/wabt.dir/src/binary-writer.cc.o
+[  7%] Building CXX object CMakeFiles/wabt.dir/src/binding-hash.cc.o
+[  8%] Building CXX object CMakeFiles/wabt.dir/src/color.cc.o
+[ 10%] Building CXX object CMakeFiles/wabt.dir/src/common.cc.o
+[ 11%] Building CXX object CMakeFiles/wabt.dir/src/binary-writer-spec.cc.o
+[ 12%] Building CXX object CMakeFiles/wabt.dir/src/config.cc.o
+[ 13%] Building CXX object CMakeFiles/wabt.dir/src/decompiler.cc.o
+[ 14%] Building CXX object CMakeFiles/wabt.dir/src/error-formatter.cc.o
+[ 15%] Building CXX object CMakeFiles/wabt.dir/src/expr-visitor.cc.o
+[ 16%] Building CXX object CMakeFiles/wabt.dir/src/feature.cc.o
+[ 17%] Building CXX object CMakeFiles/wabt.dir/src/filenames.cc.o
+[ 19%] Building CXX object CMakeFiles/wabt.dir/src/generate-names.cc.o
+[ 20%] Building CXX object CMakeFiles/wabt.dir/src/hash-util.cc.o
+[ 21%] Building CXX object CMakeFiles/wabt.dir/src/ir.cc.o
+[ 22%] Building CXX object CMakeFiles/wabt.dir/src/ir-util.cc.o
+[ 23%] Building CXX object CMakeFiles/wabt.dir/src/leb128.cc.o
+[ 24%] Building CXX object CMakeFiles/wabt.dir/src/lexer-source.cc.o
+[ 25%] Building CXX object CMakeFiles/wabt.dir/src/lexer-source-line-finder.cc.o
+[ 26%] Building CXX object CMakeFiles/wabt.dir/src/literal.cc.o
+[ 28%] Building CXX object CMakeFiles/wabt.dir/src/opcode.cc.o
+[ 29%] Building C object CMakeFiles/wabt.dir/src/opcode-code-table.c.o
+[ 30%] Building CXX object CMakeFiles/wabt.dir/src/option-parser.cc.o
+[ 31%] Building CXX object CMakeFiles/wabt.dir/src/resolve-names.cc.o
+[ 32%] Building CXX object CMakeFiles/wabt.dir/src/shared-validator.cc.o
+[ 33%] Building CXX object CMakeFiles/wabt.dir/src/stream.cc.o
+[ 34%] Building CXX object CMakeFiles/wabt.dir/src/string-view.cc.o
+[ 35%] Building CXX object CMakeFiles/wabt.dir/src/token.cc.o
+[ 37%] Building CXX object CMakeFiles/wabt.dir/src/tracing.cc.o
+[ 38%] Building CXX object CMakeFiles/wabt.dir/src/type-checker.cc.o
+[ 39%] Building CXX object CMakeFiles/wabt.dir/src/utf8.cc.o
+[ 40%] Building CXX object CMakeFiles/wabt.dir/src/validator.cc.o
+[ 41%] Building CXX object CMakeFiles/wabt.dir/src/wast-lexer.cc.o
+[ 42%] Building CXX object CMakeFiles/wabt.dir/src/wast-parser.cc.o
+[ 43%] Building CXX object CMakeFiles/wabt.dir/src/wat-writer.cc.o
+[ 44%] Building CXX object CMakeFiles/wabt.dir/src/interp/binary-reader-interp.cc.o
+[ 46%] Building CXX object CMakeFiles/wabt.dir/src/interp/interp.cc.o
+[ 47%] Building CXX object CMakeFiles/wabt.dir/src/interp/interp-util.cc.o
+[ 48%] Building CXX object CMakeFiles/wabt.dir/src/interp/istream.cc.o
+[ 49%] Linking CXX static library libwabt.a
+[ 49%] Built target wabt
+[ 53%] Building CXX object CMakeFiles/wasm.dir/src/apply-names.cc.o
+[ 53%] Building CXX object CMakeFiles/wasm.dir/src/binary.cc.o
+[ 55%] Building CXX object CMakeFiles/wasm.dir/src/binary-reader.cc.o
+[ 55%] Building CXX object CMakeFiles/wasm.dir/src/binary-reader-ir.cc.o
+[ 56%] Building CXX object CMakeFiles/wasm.dir/src/binary-writer.cc.o
+[ 56%] Building CXX object CMakeFiles/wasm.dir/src/binary-writer-spec.cc.o
+[ 57%] Building CXX object CMakeFiles/wasm.dir/src/binding-hash.cc.o
+[ 58%] Building CXX object CMakeFiles/wasm.dir/src/binary-reader-logging.cc.o
+[ 59%] Building CXX object CMakeFiles/wasm.dir/src/color.cc.o
+[ 60%] Building CXX object CMakeFiles/wasm.dir/src/common.cc.o
+[ 61%] Building CXX object CMakeFiles/wasm.dir/src/config.cc.o
+[ 62%] Building CXX object CMakeFiles/wasm.dir/src/decompiler.cc.o
+[ 64%] Building CXX object CMakeFiles/wasm.dir/src/error-formatter.cc.o
+[ 65%] Building CXX object CMakeFiles/wasm.dir/src/expr-visitor.cc.o
+[ 66%] Building CXX object CMakeFiles/wasm.dir/src/feature.cc.o
+[ 67%] Building CXX object CMakeFiles/wasm.dir/src/filenames.cc.o
+[ 68%] Building CXX object CMakeFiles/wasm.dir/src/generate-names.cc.o
+[ 69%] Building CXX object CMakeFiles/wasm.dir/src/hash-util.cc.o
+[ 70%] Building CXX object CMakeFiles/wasm.dir/src/ir.cc.o
+[ 71%] Building CXX object CMakeFiles/wasm.dir/src/ir-util.cc.o
+[ 73%] Building CXX object CMakeFiles/wasm.dir/src/leb128.cc.o
+[ 74%] Building CXX object CMakeFiles/wasm.dir/src/lexer-source.cc.o
+[ 75%] Building CXX object CMakeFiles/wasm.dir/src/lexer-source-line-finder.cc.o
+[ 76%] Building CXX object CMakeFiles/wasm.dir/src/literal.cc.o
+[ 77%] Building CXX object CMakeFiles/wasm.dir/src/opcode.cc.o
+[ 78%] Building C object CMakeFiles/wasm.dir/src/opcode-code-table.c.o
+[ 79%] Building CXX object CMakeFiles/wasm.dir/src/option-parser.cc.o
+[ 80%] Building CXX object CMakeFiles/wasm.dir/src/resolve-names.cc.o
+[ 82%] Building CXX object CMakeFiles/wasm.dir/src/shared-validator.cc.o
+[ 83%] Building CXX object CMakeFiles/wasm.dir/src/stream.cc.o
+[ 84%] Building CXX object CMakeFiles/wasm.dir/src/string-view.cc.o
+[ 85%] Building CXX object CMakeFiles/wasm.dir/src/token.cc.o
+[ 86%] Building CXX object CMakeFiles/wasm.dir/src/tracing.cc.o
+[ 87%] Building CXX object CMakeFiles/wasm.dir/src/type-checker.cc.o
+[ 88%] Building CXX object CMakeFiles/wasm.dir/src/utf8.cc.o
+[ 89%] Building CXX object CMakeFiles/wasm.dir/src/validator.cc.o
+[ 91%] Building CXX object CMakeFiles/wasm.dir/src/wast-lexer.cc.o
+[ 92%] Building CXX object CMakeFiles/wasm.dir/src/wast-parser.cc.o
+[ 93%] Building CXX object CMakeFiles/wasm.dir/src/wat-writer.cc.o
+[ 94%] Building CXX object CMakeFiles/wasm.dir/src/interp/binary-reader-interp.cc.o
+[ 95%] Building CXX object CMakeFiles/wasm.dir/src/interp/interp.cc.o
+[ 96%] Building CXX object CMakeFiles/wasm.dir/src/interp/interp-util.cc.o
+[ 97%] Building CXX object CMakeFiles/wasm.dir/src/interp/istream.cc.o
+[ 98%] Building CXX object CMakeFiles/wasm.dir/src/interp/interp-wasm-c-api.cc.o
+[100%] Linking CXX shared library libwasm.dylib
+[100%] Built target wasm
+cargo:root=/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out
+cargo:rustc-link-search=native=/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build
+cargo:rustc-link-lib=static=wabt
+cargo:rustc-link-lib=c++
+cargo:rerun-if-changed=wabt_shim.cc
+cargo:rerun-if-changed=wabt/src/emscripten-helpers.cc
+TARGET = Some("aarch64-apple-darwin")
+OPT_LEVEL = Some("s")
+HOST = Some("aarch64-apple-darwin")
+CXX_aarch64-apple-darwin = None
+CXX_aarch64_apple_darwin = None
+HOST_CXX = None
+CXX = None
+CXXFLAGS_aarch64-apple-darwin = None
+CXXFLAGS_aarch64_apple_darwin = None
+HOST_CXXFLAGS = None
+CXXFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("false")
+CARGO_CFG_TARGET_FEATURE = Some("aes,crc,dit,dotprod,dpb,dpb2,fcma,fhm,flagm,fp16,frintts,jsconv,lor,lse,neon,paca,pacg,pan,pmuv3,ras,rcpc,rcpc2,rdm,sb,sha2,sha3,ssbs,vh")
+running: "c++" "-Os" "-ffunction-sections" "-fdata-sections" "-fPIC" "-arch" "arm64" "-I" "wabt" "-I" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build" "-std=c++11" "-o" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/wabt/src/emscripten-helpers.o" "-c" "wabt/src/emscripten-helpers.cc"
+exit status: 0
+running: "c++" "-Os" "-ffunction-sections" "-fdata-sections" "-fPIC" "-arch" "arm64" "-I" "wabt" "-I" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/build" "-std=c++11" "-o" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/wabt_shim.o" "-c" "wabt_shim.cc"
+exit status: 0
+AR_aarch64-apple-darwin = None
+AR_aarch64_apple_darwin = None
+HOST_AR = None
+AR = None
+running: "ar" "cq" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/libwabt_shim.a" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/wabt/src/emscripten-helpers.o" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/wabt_shim.o"
+exit status: 0
+running: "ar" "s" "/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out/libwabt_shim.a"
+exit status: 0
+cargo:rustc-link-lib=static=wabt_shim
+cargo:rustc-link-search=native=/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/release/build/wabt-sys-45f086e4ef551540/out

@@ -36,7 +36,7 @@ blueprint!{
         total_token_weight: Decimal,
         nft_proposal_address: Vec<ResourceAddress>,
 
-        liquidity_pool_dao_address: ComponentAddress,
+        liquidity_pool_dao_address: LiquidityPoolDAOComponent,
     }
 
     impl LiquidityPool {
@@ -179,7 +179,7 @@ blueprint!{
                 .initial_supply(2);
 
             let nft_proposal_admin2: Bucket = nft_proposal_admin.take(1);
-
+            
             // Creating the liquidity pool component and instantiating it
             let liquidity_pool: ComponentAddress = Self { 
                 vaults: vaults,
@@ -191,7 +191,12 @@ blueprint!{
                 token_2_weight: token_2_weight,
                 total_token_weight: total_token_weight,
                 nft_proposal_address: Vec::new(),
-                liquidity_pool_dao_address: LiquidityPoolDAO::new(tracking_tokens.resource_address(), nft_proposal_admin2)
+                liquidity_pool_dao_address: LiquidityPoolDAOComponent {
+                    component: scrypto::component::Component::try_from(
+                        LiquidityPoolDAOComponent::new(tracking_tokens.resource_address(), nft_proposal_admin2).to_vec().as_slice(),
+                    )
+                    .unwrap(),
+                },
             }
             .instantiate()
             .globalize();
@@ -453,6 +458,8 @@ blueprint!{
                 "[Withdraw]: Not enough liquidity available for the withdraw."
             );
 
+
+
             return vault.take(amount);
         }
 
@@ -573,7 +580,7 @@ blueprint!{
             // Computing the amount of tracking tokens that the liquidity provider is owed and minting them. In the case
             // that the liquidity pool has been completely emptied out (tracking_tokens_manager.total_supply() == 0)  
             // then the first person to supply liquidity back into the pool again would be given 100 tracking tokens.
-            let tracking_tokens_manager: &ResourceManager = borrow_resource_manager!(self.tracking_token_address);
+            let tracking_tokens_manager: &mut ResourceManager = borrow_resource_manager!(self.tracking_token_address);
             let tracking_amount: Decimal = if tracking_tokens_manager.total_supply() == Decimal::zero() { 
                 dec!("100.00") 
             } else {

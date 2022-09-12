@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/wasm32-unknown-unknown/release/build/typenum-0549af9e2b8f80b9/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/jakemai/Documents/GitHub/liquidity_pool_dao/liquidity_pool_dao/target/wasm32-unknown-unknown/release/build/typenum-0549af9e2b8f80b9/out/op.rs
